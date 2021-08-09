@@ -1,0 +1,63 @@
+{%extends 'layout.html'%}
+{%block content%}
+<h1>Create a new account</h1>
+<section id="breadrumbs" class="breadrumbs">
+<div class = "container">
+<div class="d-flex justify-content-between align-items-center">
+</div>
+</section>
+<div class="row mt-5 justify-content-center" data-aos="fade-up">
+<div class="col-lg-4">
+<h3 class="text-center">Register</h3><br>
+
+{%if messages %}
+<div class='row'>
+    <div class='col-xs-12'>
+{%for message in messages %}
+<div class="alert{{message.tags}} alert-dismissible" role="alert">
+<button type="button" class="close" data-dismiss="alert" aria-label="close">
+<span aria-hideen="true">&times;</span>
+</button>
+{{message}}
+</div>
+{%endfor%}
+</div>
+</div>
+{%endif%}
+
+<form action="" method="post" role="form">
+{% csrf_token %}
+<div class="form-group">
+<input type="text" class="form-control" name="fname" id="fname" placeholder="First Name">
+<div class="validate"></div>
+</div><br>
+<div class="form-group">
+<input type="text" class="form-control" name="lname" id="lname" placeholder="Last Name">
+<div class="validate"></div>
+</div><br>
+<div class="form-group">
+<input type="text" class="form-control" name="username" id="username" placeholder="Username">
+<div class="validate"></div>
+</div><br>
+<div class="form-group">
+<input type="text" class="form-control" name="email" id="email" placeholder="Email Address/Phone">
+<div class="validate"></div>
+</div><br>
+<div class="form-group">
+<input type="Password" class="form-control" name="password" id="password" placeholder="Password">
+<div class="validate"></div>
+</div><br>
+<div class="form-group">
+<input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="Re-type Password">
+<div class="validate"></div>
+</div><br>
+<div class="text-center">
+<button type="submit" class="btn btn-success btn-block ">Signup</button>
+</div>
+</form>
+<small>Already have an account <a href="{%url 'login'%}">Signin!</a></small>
+</div>
+</div>
+</div>
+</section>
+{%endblock%}

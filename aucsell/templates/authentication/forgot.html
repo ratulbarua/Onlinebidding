@@ -1,0 +1,27 @@
+{%extends 'layout.html'%}
+{%block content%}
+<h1>Have you lost your password?</h1>
+<section id="breadrumbs" class="breadrumbs">
+<div class = "container">
+
+    <div class="d-flex justify-content-between align-items-center">
+</div>
+</section>
+<div class="row mt-5 justify-content-center" data-aos="fade-up">
+<div class="col-lg-4">
+<h3 class="text-center">Forgot Password</h3><br>
+<form action="" method="post" role="form">
+{% csrf_token %}
+<div class="form-group">
+<input type="Email or text" class="form-control" name="email" id="subject" placeholder="Email Address/Phone">
+<div class="validate"></div>
+</div>
+<button type="submit" class="btn btn-success btn-block ">Forgot Password</button><br>
+</div>
+</form>
+<center><small>Login to my account <a href="{%url 'login'%}">Click Here</a></small></center>
+</div>
+</div>
+</div>
+</section>
+{%endblock%}
